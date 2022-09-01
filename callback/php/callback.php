@@ -17,10 +17,10 @@ $request = (array_values($ussd_menu)[$request_id]);
 $command = $request_id + 1 === count($ussd_menu) ? "terminate" : "continue";
 
 if ($command === "terminate") {
-    echo "Request is termintating soon <br/>";
+    # handle terminate session here
 }
 if ($command === "continue") {
-    echo "On Progress <br/>";
+    # handle continue session here
 }
 
 $res = array(
@@ -30,7 +30,7 @@ $res = array(
     'operator' => $operator,
     'payload' => array(
         'request_id' => $request_id,
-        'response' => $request,
+        'request' => $request,
     ),
 );
 
